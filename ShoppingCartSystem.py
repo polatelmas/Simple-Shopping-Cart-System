@@ -8,3 +8,27 @@ while True:
             print("Please enter a number equal or bigger than zero.")
     except ValueError:
         print("You have to enter an integer.")
+
+print("Enter the informations about product")
+for i in range(productQuantity):
+    print(f"\n{i+1}. Product:")
+
+    productName = input("Product Name: ")
+
+    while True:
+        try:
+            productPrice = float(input("Price for one in Turkish Lira (TL): "))
+            productQuantity = int(input("Quantity (Amount): "))
+            if productPrice < 0 or productQuantity < 0:
+                print("Price and Quantity cannot be negative. Please enter again.")
+            else:
+                break
+        except ValueError:
+            print("Please enter float for price and integer for quantity.")
+
+    product = {
+        "Name": productName,
+        "Price": productPrice,
+        "Quantity": productQuantity
+    }
+    cart.append(product)
