@@ -32,3 +32,11 @@ for i in range(productQuantity):
         "Quantity": productQuantity
     }
     cart.append(product)
+
+print("Total Cart and Calculations")
+for item in cart:
+    productTotal = item["price"] * item["quantity"]
+    print(f"{item["name"]} ({item["quantity"]} quantity x {item["price"]:.2f} TL): {productTotal:.2f} TL")
+    sumOfTotalPrice += productTotal
+
+print(f"\Cart Subtotal: {sumOfTotalPrice:.2f} TL")
